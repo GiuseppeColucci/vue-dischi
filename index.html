@@ -16,12 +16,24 @@
             <header>
                 <div class="container">
                     <img src="logo.png" alt="logo" />
+                    <div class="boxselect">
+
+                        <select v-model="selected">
+                            <option disabled value="">Please select one</option>
+                            <option value="all">All</option>
+                            <option value="pop">pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="metal">Metal</option>
+                            <option value="jazz">Jazz</option>
+                          </select>
+                    </div>
+                     
                 </div>
             </header>
     
             <div class="cds-container container">
                 <!-- Disco ad esempio -->
-                <div class="cd" v-for='element in arrayMusic'>
+                <div class="cd" v-for='element in arrayMusic'v-if='selected.toLowerCase()=== element.genre.toLowerCase()||selected=== "all"'>
                     <img :src="element.poster" alt="">
                     <h3>{{element.title}}</h3>
                     <span class="author">{{element.author}}</span>

@@ -2,6 +2,7 @@ new Vue({
 	el:'#app',
 	data:{
 		arrayMusic:[],
+		selected: 'all',
 	},
 	methods:{
 
